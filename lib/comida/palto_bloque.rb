@@ -19,8 +19,8 @@ module Comida
   class Plato_bloque
     attr_reader :nombre, :alimentos
 
-    def initialize(nombre, &block)
-      @nombre = nombre
+    def initialize(name, &block)
+      @nombre = name
       @alimentos = []
 
       if block_given?
