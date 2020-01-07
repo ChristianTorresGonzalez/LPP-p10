@@ -439,9 +439,9 @@ RSpec.describe Comida::PlatoHija do
 		precio_total 7.50
 		end
 
-		# it "COmprobando salida menu formateado" do
+		it "COmprobando salida menu formateado" do
 		# expect(menu.huella_nutricional).to eq(5)
 		# expect(menu.to_s).to eq("Combinado n o . 1\n=================\n\nPlatos : {:nombre=>#<Comida::PlatoHija:0x000056123a26fbe0 @n...:nombre=>\"Refresco\", :descripcion=>\"Refrescos de lata\", :cantidad=>\"3 latas\", :precio=>1.5}\n")
-		# end
+		end
 	end
 end
