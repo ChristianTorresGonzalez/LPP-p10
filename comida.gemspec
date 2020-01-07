@@ -35,5 +35,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-bundler"
 
   spec.add_development_dependency "coveralls"
-  # gem 'coveralls', require: false
 end
