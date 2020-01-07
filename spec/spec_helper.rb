@@ -1,7 +1,8 @@
+require 'coveralls'
+Coveralls.wear!
+
 require "bundler/setup"
 require "comida"
-# require 'coveralls'
-# Coveralls.wear!
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
