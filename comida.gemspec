@@ -2,6 +2,8 @@ lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "comida/version"
 
+gem 'coveralls', require: false
+
 Gem::Specification.new do |spec|
   spec.name          = "comida"
   spec.version       = Comida::VERSION
@@ -33,7 +35,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "guard-bundler"
-  
-  # gem 'coveralls', require: false
-
 end
