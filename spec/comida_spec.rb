@@ -297,7 +297,7 @@ RSpec.describe Comida::Plato do
 		end
 
 		it "Comprobando clase del objeto plato" do
-			expect(Comida::Plato.ancestors).to eq([Comida::Plato, Object, Kernel, BasicObject])
+			expect(Comida::Plato.ancestors).to eq([Comida::Plato, Object, Tins::Full, Tins::Blank::Object, JSON::Ext::Generator::GeneratorMethods::Object, Kernel, BasicObject])
 		end
 	end
 end
