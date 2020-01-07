@@ -47,3 +47,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/comida.
+
+
+https://coveralls.io/repos/github/ChristianTorresGonzalez/LPP-p10/badge.svg?branch=master(Coverage Status)!:https://coveralls.io/github/ChristianTorresGonzalez/LPP-p10?branch=master
