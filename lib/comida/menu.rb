@@ -38,7 +38,7 @@ module Comida
 
     def plato(nombre, options = {})
       plato = nombre
-      palto << "(#{options[:descripcion]})" if options[:descripcion]
+      plato << "(#{options[:descripcion]})" if options[:descripcion]
       plato << "(#{options[:cantidad]})" if options[:cantidad]
       plato << "(#{options[:precio]})" if options[:precio]
 
@@ -64,11 +64,7 @@ module Comida
       @platos.each_with_index do |plato, index|
         output << "#{index + 1}) #{plato}\n"
       end
-
-      # def valor_nutricional
-      #   @v_nutricional = @nombre.huella_nutricional
-      # end
-
+      
       output
     end
   end
