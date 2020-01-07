@@ -2,6 +2,7 @@ require "comida/version"
 require "comida/food.rb"
 require "comida/lista.rb"
 require "comida/plato.rb"
+require "comida/menu.rb"
 
 module Comida
   # Clase para detectar errores

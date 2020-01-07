@@ -429,4 +429,19 @@ RSpec.describe Comida::PlatoHija do
 			expect(precio.collect{|i| i * ((menu.max).huella_nutricional)}).to eq([50,40,5])
 		end
 	end
+
+	context "Practica 10: Creacion de Menu" do
+		menu = Comida::Menu.new("Combinado n o . 1") do
+		descripcion "hamburguesa, papas, refresco"
+		plato :nombre => plato_español,:descripcion => "Hamburguesa especial de la casa", :cantidad => "5 carnes", :precio => 4.25
+		plato :nombre => "Papas", :descripcion => "Papas pequeñas", :precio => 1.75
+		plato :nombre => "Refresco", :descripcion => "Refrescos de lata", :cantidad => "3 latas", :precio => 1.50
+		precio_total 7.50
+		end
+
+		# it "COmprobando salida menu formateado" do
+		# expect(menu.huella_nutricional).to eq(5)
+		# expect(menu.to_s).to eq("Combinado n o . 1\n=================\n\nPlatos : {:nombre=>#<Comida::PlatoHija:0x000056123a26fbe0 @n...:nombre=>\"Refresco\", :descripcion=>\"Refrescos de lata\", :cantidad=>\"3 latas\", :precio=>1.5}\n")
+		# end
+	end
 end
