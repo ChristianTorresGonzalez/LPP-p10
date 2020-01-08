@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Calculo de dieta adecuada y nutricionalmente equilibrada que contamine lo menos posible y que afecte lo menos posible al efecto invernadero.}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-ChristianTorresGonzalez.git"
 
-  spec.metadata["allowed_push_host"] = "http://mygemserver.com"
+  # spec.metadata["allowed_push_host"] = "http://mygemserver.com"
 
  # spec.metadata["homepage_uri"] = spec.homepage
   #spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
