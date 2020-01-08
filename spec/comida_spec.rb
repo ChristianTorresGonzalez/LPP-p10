@@ -418,30 +418,50 @@ RSpec.describe Comida::PlatoHija do
 			expect(plato_español.huella_nutricional).to eq(1)
 		end
 
-		menu = [plato_español,plato_vasco,plato_vegetariano]
+		menu_ = [plato_español,plato_vasco,plato_vegetariano]
 		precio = [50, 40,5]
 
 		it "Comprobando obtencion de maximo de un vector" do
-			expect(menu.max).to eq(plato_español)
+			expect(menu_.max).to eq(plato_español)
 		end
 
 		it "Incrementacion de precios proporcionalmente" do
-			expect(precio.collect{|i| i * ((menu.max).huella_nutricional)}).to eq([50,40,5])
+			expect(precio.collect{|i| i * ((menu_.max).huella_nutricional)}).to eq([50,40,5])
 		end
 	end
 
 	context "Practica 10: Creacion de Menu" do
 		menu = Comida::Menu.new("Combinado n o . 1") do
 		descripcion "hamburguesa, papas, refresco"
-		plato :nombre => plato_español,:descripcion => "Hamburguesa especial de la casa", :cantidad => "5 carnes", :precio => 4.25
+		plato :nombre => "Hamburguesa",:descripcion => "Hamburguesa especial de la casa", :cantidad => "5 carnes", :precio => 4.25
 		plato :nombre => "Papas", :descripcion => "Papas pequeñas", :precio => 1.75
 		plato :nombre => "Refresco", :descripcion => "Refrescos de lata", :cantidad => "3 latas", :precio => 1.50
 		precio_total 7.50
+		valor_nutricional 520
+		valor_ambiental 231
 		end
 
-		it "COmprobando salida menu formateado" do
-		# expect(menu.huella_nutricional).to eq(5)
-		# expect(menu.to_s).to eq("Combinado n o . 1\n=================\n\nPlatos : {:nombre=>#<Comida::PlatoHija:0x000056123a26fbe0 @n...:nombre=>\"Refresco\", :descripcion=>\"Refrescos de lata\", :cantidad=>\"3 latas\", :precio=>1.5}\n")
+		it "COmprobando valor valor_nutricional" do
+			expect(menu.v_nutricional).to eq(520)
+		end
+
+		it "Comprobando valor ambiental" do
+			expect(menu.v_ambiental).to eq(231)
+		end
+
+		it "Comprobando salida formateada" do
+		expect(menu.to_s).to eq("Combinado n o . 1\n=================\n\nPlatos : \n\n1) Hamburguesa especial de la casa, 5 carnes, 4.25\n2) Papas pequeñas, , 1.75\n3) Refrescos de lata, 3 latas, 1.5\n")
+		end
+
+		plato = Comida::Plato_bloque.new("Hamburguesa") do
+			descripcion "Hamburguesa especial de la casa"
+			alimento :descripcion => carne_v, :gramos => 100
+			alimento :descripcion => cerveza, :gramos => 294
+		end
+
+		it "Comprobando salida formateada de plato" do
+			expect(plato.to_s).to eq("Hamburguesa\n===========\n\nPlatos : \n\n1) (Carne_vaca, 21.1, 0.0, 3.1, 50.0, 164.0), 100\n2) (cerveza, 0.5, 3.6, 0.0, 0.24, 0.22), 294\n"
+)
 		end
 	end
 end

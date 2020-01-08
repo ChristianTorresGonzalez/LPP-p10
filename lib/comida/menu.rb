@@ -56,15 +56,23 @@ module Comida
       @precio_total = precio
     end
 
+    def valor_nutricional(valor)
+      @v_nutricional = valor
+    end
+
+    def valor_ambiental(valor)
+      @v_ambiental = valor
+    end
+
     def to_s
       output = @nombre
       output << "\n#{'=' * @nombre.size}\n\n"
-      output << "Platos : #{@platos.join(', ')}\n\n"
+      output << "Platos : \n\n"
 
       @platos.each_with_index do |plato, index|
-        output << "#{index + 1}) #{plato}\n"
+        output << "#{index + 1}) #{plato[:descripcion]}, #{plato[:cantidad]}, #{plato[:precio]}\n"
       end
-      
+
       output
     end
   end

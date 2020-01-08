@@ -17,7 +17,7 @@
 
 module Comida
   class Plato_bloque
-    attr_reader :nombre, :alimentos
+    attr_reader :nombre, :descripcion, :alimentos
 
     def initialize(name, &block)
       @nombre = name
@@ -46,10 +46,10 @@ module Comida
     def to_s
       output = @nombre
       output << "\n#{'=' * @nombre.size}\n\n"
-      output << "Platos : #{@alimentos.join(', ')}\n\n"
+      output << "Platos : \n\n"
 
       @alimentos.each_with_index do |alimento, index|
-        output << "#{index + 1}) #{alimento}\n"
+        output << "#{index + 1}) #{alimento[:descripcion]}, #{alimento[:gramos]}\n"
       end
 
       output
