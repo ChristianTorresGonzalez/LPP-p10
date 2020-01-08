@@ -460,8 +460,7 @@ RSpec.describe Comida::PlatoHija do
 		end
 
 		it "Comprobando salida formateada de plato" do
-			expect(plato.to_s).to eq("Hamburguesa\n===========\n\nPlatos : \n\n1) (Carne_vaca, 21.1, 0.0, 3.1, 50.0, 164.0), 100\n2) (cerveza, 0.5, 3.6, 0.0, 0.24, 0.22), 294\n"
-)
+			expect(plato.to_s).to eq("Hamburguesa\n===========\n\nPlatos : \n\n1) (Carne_vaca, 21.1, 0.0, 3.1, 50.0, 164.0), 100\n2) (cerveza, 0.5, 3.6, 0.0, 0.24, 0.22), 294\n")
 		end
 	end
 end
